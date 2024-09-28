@@ -59,8 +59,8 @@ command = [
 progress_pattern = re.compile(r"time=(\d+:\d+:\d+\.\d+)")
 
 
-def time_to_seconds(time_str):
-    h, m, s = map(float, time_str.split(":"))
+def time_to_seconds(column_time):
+    h, m, s = map(float, column_time.split(":"))
     return h * 3600 + m * 60 + s
 
 
