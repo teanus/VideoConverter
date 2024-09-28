@@ -5,7 +5,7 @@ from typing import List
 
 from tqdm import tqdm
 
-directory =  eo/"
+directory =  "video/"
 files = os.listdir(directory)
 
 mp4_files: List[str] = [f for f in files if f.endswith(".mp4")]
@@ -109,7 +109,7 @@ def split_video(file_path: str, part_size_gb: float = 1.9) -> None:
                 "ffmpeg",
                 "-i", video_path,
                 "-i", audio_path,
-                "-c:v", "copy",
+                "-c:v", "copy", output_file,
                 "-c:a", "aac",
                 "-strict", "experimental",
                 output_path,
