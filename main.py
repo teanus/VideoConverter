@@ -11,7 +11,7 @@ files = os.listdir(directory)
 mp4_files: List[str] = [f for f in files if f.endswith(".mp4")]
 mp3_files: List[str] = [f for f in files if f.endswith(".mp3")]
 
-if len(mp4_files) != 1 or len(mp3_files) != 1:
+if len(mp4_files) != 1 and len(mp3_files) != 1:
     raise Exception("В директории должно быть ровно один файл .mp4 и один файл .mp3")
 
 video_path: str = os.path.join(directory, mp4_files[0])
